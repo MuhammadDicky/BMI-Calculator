@@ -198,15 +198,14 @@ class _InputPageState extends State<InputPage> {
                 weight: currentInputWeight,
               );
 
-              Navigator.push(
+              Navigator.pushNamed(
                 context,
-                MaterialPageRoute(builder: (context) {
-                  return ResultPage(
-                    bmiResult: bmiResult.calculate(),
-                    status: bmiResult.getResult()['status'],
-                    interpretation: bmiResult.getResult()['interpretation'],
-                  );
-                }),
+                ResultPage.routeName,
+                arguments: ResultPageArg(
+                  bmiResult: bmiResult.calculate(),
+                  status: bmiResult.getResult()['status'],
+                  interpretation: bmiResult.getResult()['interpretation'],
+                ),
               );
             },
           )

@@ -11,7 +11,24 @@ class BMICalculator extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => InputPage(),
-        '/result': (context) => ResultPage(),
+      },
+      onGenerateRoute: (RouteSettings settings) {
+        if (settings.name == ResultPage.routeName) {
+          final ResultPageArg args = settings.arguments;
+
+          return MaterialPageRoute(
+            builder: (BuildContext context) {
+              return ResultPage(
+                bmiResult: args.bmiResult,
+                status: args.status,
+                interpretation: args.interpretation,
+              );
+            },
+          );
+        }
+
+        assert(false, 'Not find route "${settings.name}"');
+        return null;
       },
       theme: ThemeData.dark().copyWith(
         primaryColor: Color(0xFF0A0E21),

@@ -70,22 +70,6 @@ class RoundIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget test = GestureDetector(
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(40.0),
-          color: Colors.black.withOpacity(0.2),
-        ),
-        width: 40.0,
-        height: 40.0,
-        child: Icon(
-          icon,
-          color: Colors.white,
-        ),
-      ),
-      onTap: onTap,
-    );
-
     return RawMaterialButton(
       elevation: 6.0,
       constraints: BoxConstraints.tightFor(

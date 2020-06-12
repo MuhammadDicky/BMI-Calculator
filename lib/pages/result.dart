@@ -11,6 +11,7 @@ class ResultPage extends StatelessWidget {
     @required this.interpretation,
   });
 
+  static const String routeName = '/resultPage';
   final String bmiResult, status, interpretation;
 
   @override
@@ -104,4 +105,14 @@ class ResultPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class ResultPageArg {
+  ResultPageArg({
+    @required this.bmiResult,
+    @required this.status,
+    @required this.interpretation,
+  });
+
+  final String bmiResult, status, interpretation;
 }
